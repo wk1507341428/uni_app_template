@@ -1,0 +1,56 @@
+/*每个页面公共css */
+button {
+	margin: 0;
+	padding: 0;
+	background: transparent;
+	text-align: left;
+	overflow: visible;
+}
+
+button::after{
+  border: none;
+}
+
+.button-hover {
+	color:rgba(0, 0, 0, 0.6);
+	background-color:#fff;
+}
+
+$font-color: (
+	'111111': '#111111',
+	'999999': '#999999',
+	'333333': '#333333',
+	'666666': '#666666'
+);
+@each $i, $color in $font-color {
+	.f-color_#{$i} {
+		color: #{$color};
+	}
+}
+
+// 上边距
+@for $i from 1 through 120 {
+  .mt#{$i} {
+    margin-top: $i+upx;
+  }
+}
+
+// font-size
+@for $i from 1 through 200 {
+  .fz#{$i} {
+    font-size: $i+upx;
+  }
+}
+
+// line-height
+@for $i from 1 through 200 {
+  .lh#{$i} {
+    line-height: $i+upx;
+  }
+}
+
+@for $i from 1 through 50 {
+  .pl#{$i} {
+    padding-left: $i+upx;
+  }
+}

@@ -1,0 +1,1 @@
+<view class="content"><image class="logo" src="/static/logo.png"></image><view class="text-area"><text class="title">{{$root.f0}}</text></view><u-button vue-id="8dd740cc-1" bind:__l="__l" vue-slots="{{['default']}}">按钮</u-button></view>
