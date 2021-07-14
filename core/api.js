@@ -2,7 +2,6 @@ import HttpClient from './request/HttpClient'
 
 const http = new HttpClient({
 	baseUrl: 'https://sc-portal-test.pujiangmutual.com',
-	// headers: {},
 	defaultLoading: {
 		show(defaultTips) {
 			console.log('loading开始')
@@ -12,7 +11,7 @@ const http = new HttpClient({
 		},
 	},
 	onNetworkError(error) {
-		console.log(error)
+		console.log(error, "onNetworkError")
 		return;
 	}
 })
@@ -21,7 +20,7 @@ const http = new HttpClient({
  * @description: 获取验证码
  * @param {String} photo 手机号
  */
-export function SendVerifyCode(data) {
+export function SendVerifyCode(data = {phone:13344445555}) {
 	return http
 		.post('/rest/anon/sms', data)
 		.with_loading()

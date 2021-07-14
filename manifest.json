@@ -43,7 +43,9 @@
             /* ios打包配置 */
             "ios" : {},
             /* SDK配置 */
-            "sdkConfigs" : {}
+            "sdkConfigs" : {
+                "ad" : {}
+            }
         }
     },
     /* 快应用特有相关 */
@@ -66,7 +68,14 @@
         "usingComponents" : true
     },
     "mp-toutiao" : {
-        "usingComponents" : true
+        "usingComponents" : true,
+        "appid" : "tta194d7293eac81ed01",
+        "setting" : {
+            "es6" : true,
+            "postcss" : true,
+            "minified" : true,
+            "urlCheck" : false
+        }
     },
     "uniStatistics" : {
         "enable" : false
