@@ -18,8 +18,12 @@ import Interface from './Interface'
  */
 class HttpClient {
   constructor(config) {
+		const interceptor = {			
+			request: () => {},
+			response: () => {},
+		}
     this.body = {};
-    this.defaultConfig = config;
+    this.defaultConfig = Object.assign({ interceptor }, config);
   }
 
   /**
@@ -41,6 +45,24 @@ class HttpClient {
     this.body = body
     return new Interface(this, 'POST', path)
   }
+	
+	/**
+	 * @description 上传文件请求 这个是原生相机
+	 * @param {String} path 
+	 * @param {Object} uploadFileConfig  wx.chooseImage 和 wx.uploadFile 的配置文件
+	 */
+	uploadFile(path, uploadFileConfig) {
+		return new Interface(this, 'UPLOAD_FILE', path, uploadFileConfig)
+	}
+	
+	/**
+	 * @description 上传文件请求 这个是自定义相机 参数直接传文件流的 { filePath: xxx }
+	 * @param {String} path 
+	 * @param {Object} uploadFileConfig  wx.uploadFile 的配置文件
+	 */
+	uploadFileCustom(path, uploadFileConfig) {
+		return new Interface(this, 'UPLOAD_FILE_CUSTOM', path, uploadFileConfig)
+	}
 
 }
 
